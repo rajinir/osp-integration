@@ -15,7 +15,7 @@ The following Dell EMC storage drivers that are fully integrated with director a
 * [Dell EMC SC Series iSCSI driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html)
 * [Dell EMC Unity driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-unity-driver.html) - 
  For Unity please refer to  https://github.com/emc-openstack/osp-deploy
-* [Dell EMC VNX driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-vnx-driver.html) -  For VNX please refer toSee https://github.com/emc-openstack/osp-deploy
+* [Dell EMC VNX driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-vnx-driver.html) -  For VNX please refer to https://github.com/emc-openstack/osp-deploy
 
 
 
