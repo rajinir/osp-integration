@@ -13,10 +13,9 @@ This document mainly covers the Dell EMC storage backends that are not yet fully
 
 The following Dell EMC storage drivers that are fully integrated with director and can be deployed using tripleo heat templates include
 * [Dell EMC SC Series iSCSI driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html)
-* [Dell EMC Unity driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-unity-driver.html)
--  For Unity please refer to  https://github.com/emc-openstack/osp-deploy
-* [Dell EMC VNX driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-vnx-driver.html)
-- For VNX please refer toSee https://github.com/emc-openstack/osp-deploy
+* [Dell EMC Unity driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-unity-driver.html) - 
+ For Unity please refer to  https://github.com/emc-openstack/osp-deploy
+* [Dell EMC VNX driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-vnx-driver.html) -  For VNX please refer toSee https://github.com/emc-openstack/osp-deploy
 
 
 
@@ -35,7 +34,7 @@ The environment file contains the settings for each back end you want to define.
 
 Create the environment file that will orchestrate the back end settings. Use the sample file provided below for each backend.  
 
-1. Dell EMC XtremIO Block Storage driver
+**1. Dell EMC XtremIO Block Storage driver**
 
 **iSCSI Environment sample**
 
@@ -82,7 +81,7 @@ parameter_defaults:
     cinder_user_enabled_backends: ['tripleo_dellemc_xtremio']
 ```
 
-2. Dell EMC PowerMax iSCSI and FC drivers
+**2. Dell EMC PowerMax iSCSI and FC drivers**
 
 **iSCSI Environment sample**
 
@@ -139,8 +138,9 @@ parameter_defaults:
             value: 'SRP_1'
     cinder_user_enabled_backends: ['tripleo_dellemc_powermax']
 ```
-3. Dell EMC SC Series Fibre Channel driver
+**3. Dell EMC SC Series Fibre Channel driver**
 
+**FC Environment sample**
 ``` yaml
 parameter_defaults:
   ControllerExtraConfig:
