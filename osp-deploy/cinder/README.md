@@ -167,11 +167,11 @@ parameter_defaults:
 ```    
 #### Deploy the configured backends
 
-When you have created the dellemc-<backend>-env.yaml file, deploy the backend configuration by running the openstack overcloud deploy command using the templates option. If you passed any extra environment files when you created the overcloud, pass them again here using the -e option. 
+When you have created the dellemc-backend-env.yaml file, deploy the backend configuration by running the openstack overcloud deploy command using the templates option. If you passed any extra environment files when you created the overcloud, pass them again here using the -e option. 
  
 ```bash
 (undercloud) $ openstack overcloud deploy --templates \
--e /home/stack/templates/dellemc-<backend>-env.yaml  \
+-e /home/stack/templates/dellemc-backend-env.yaml  \
 -e <other templates>
 ```
 
