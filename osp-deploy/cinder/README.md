@@ -11,7 +11,7 @@ This document mainly covers the Dell EMC storage backends that are not yet fully
 * [Dell EMC PowerMax iSCSI and FC drivers](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-powermax-driver.html)
 * [Dell EMC SC Series Fibre Channel driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html)
 
-The following Dell EMC storage drivers that are fully integrated with director and can be deployed using tripleo heat templates include
+The following Dell EMC storage drivers that are fully integrated with director and can be deployed using tripleo heat templates 
 * [Dell EMC SC Series iSCSI driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html)
 * [Dell EMC Unity driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-unity-driver.html) - 
  For Unity please refer to  https://github.com/emc-openstack/osp-deploy
