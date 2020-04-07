@@ -12,10 +12,10 @@ This document mainly covers the Dell EMC storage backends that are not yet fully
 * [Dell EMC SC Series Fibre Channel driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html)
 
 The following Dell EMC storage drivers that are fully integrated with director and can be deployed using tripleo heat templates 
-* [Dell EMC SC Series iSCSI driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html).  - For Dell SC Series refer to https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.0/html/dell_storage_center_back_end_guide/index
+* [Dell EMC SC Series iSCSI driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html) - For Dell SC Series ISCSI driver refer to https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.0/html/dell_storage_center_back_end_guide/index
 * [Dell EMC Unity driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-unity-driver.html) - 
- For Unity please refer to  https://github.com/emc-openstack/osp-deploy
-* [Dell EMC VNX driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-vnx-driver.html) -  For VNX please refer to https://github.com/emc-openstack/osp-deploy
+ For Unity Driver please refer to  https://github.com/emc-openstack/osp-deploy
+* [Dell EMC VNX driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-vnx-driver.html) -  For VNX Driver please refer to https://github.com/emc-openstack/osp-deploy
 
 
 
