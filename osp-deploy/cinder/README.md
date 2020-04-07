@@ -11,30 +11,32 @@ This document mainly covers the Dell EMC storage backends that are not yet fully
 * [Dell EMC PowerMax iSCSI and FC drivers](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-powermax-driver.html)
 * [Dell EMC SC Series Fibre Channel driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html)
 
+
 The following Dell EMC storage drivers that are fully integrated with director and can be deployed using tripleo heat templates 
-* [Dell EMC SC Series iSCSI driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html) - For Dell SC Series ISCSI driver refer to https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.0/html/dell_storage_center_back_end_guide/index
+* [Dell EMC SC Series iSCSI driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html) - Please refer to this [backend guide for SC Series ISCSI driver](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.0/html/dell_storage_center_back_end_guide/index)
 * [Dell EMC Unity driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-unity-driver.html) - 
- For Unity Driver please refer to  https://github.com/emc-openstack/osp-deploy
-* [Dell EMC VNX driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-vnx-driver.html) -  For VNX Driver please refer to https://github.com/emc-openstack/osp-deploy
+ Please refer to this [custom deployment guide for the Unity Driver](https://github.com/emc-openstack/osp-deploy)
+* [Dell EMC VNX driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-vnx-driver.html) - Please refer to this [custom deployment guide for the VNX driver](https://github.com/emc-openstack/osp-deploy)
+ 
 
-
-
-### Prerequisites
+## Prerequisites
 - Red Hat OpenStack Platform (RHOSP) 16 overcloud deployed through director.
 - Dell EMC Storage Backend configured as storage repository.
 - Configuration settings and credentials
 
-### Deployment Steps
+## Deployment Steps
 
-#### Congiguration settings
+### Configuration settings
 Configuration setttings and credentials for the choosen backend storage.
 
-#### Create the Environment File
+### Prepare the Environment File
 The environment file contains the settings for each back end you want to define. The environment file handy will help ensure that the back end settings persist through future Overcloud updates.  
 
 Create the environment file that will orchestrate the back end settings. Use the sample file provided below for your specific backend.  
 
 **1. Dell EMC XtremIO Block Storage driver**
+
+For full detailed instruction of options please refer to [XtremIO Backend Configuration](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-xtremio-driver.html#configuration-options).
 
 **iSCSI Environment sample**
 
@@ -82,6 +84,8 @@ parameter_defaults:
 ```
 
 **2. Dell EMC PowerMax iSCSI and FC drivers**
+
+For full detailed instruction of options please refer to [PowerMax Backend Configuration](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-powermax-driver.html#configuration-options)
 
 **iSCSI Environment sample**
 
@@ -139,6 +143,7 @@ parameter_defaults:
     cinder_user_enabled_backends: ['tripleo_dellemc_powermax']
 ```
 **3. Dell EMC SC Series Fibre Channel driver**
+For full detailed instruction of options please refer to [SC Series Backend Configuration](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html#configuration-options)
 
 **FC Environment sample**
 ``` yaml
@@ -165,24 +170,25 @@ parameter_defaults:
             value: 'cindervol'
     cinder_user_enabled_backends: ['tripleo_dellemc_dellsc']
 ```    
-#### Deploy the configured backends
+### Deploy the configured backends
 
 When you have created the file dellemc-backend-env.yaml file with appropriate backends, deploy the backend configuration by running the openstack overcloud deploy command using the templates option. If you passed any extra environment files when you created the overcloud, pass them again here using the -e option. 
  
 ```bash
 (undercloud) $ openstack overcloud deploy --templates \
+-e /home/stack/templates/overcloud_images.yaml \
 -e /home/stack/templates/dellemc-backend-env.yaml  \
 -e <other templates>
 ```
 
-#### MultiBackend Deployment
+### MultiBackend Deployment
 You can deploy multiple backends simulatenously using the -e templates options as well. 
 
-#### Verify the configured changes
+### Verify the configured changes
 
-When the director completes the overcloud deployment, check that the cinder services are up and running. You can also verify that the cinder.conf has the correct settings. 
+When the director completes the overcloud deployment, check that the cinder services are up and running. You can also verify that the cinder.conf in the Cinder container should reflect changes made above.
 
-#### Testing the configured Backend
+### Testing the configured Backend
 After you deploy the back ends to the overcloud, create volume-type for the backend and test if you can successfully create and attach volumes of that type. 
 
 ## References
