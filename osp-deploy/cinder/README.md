@@ -186,7 +186,7 @@ When the director completes the overcloud deployment, check that the cinder serv
 After you deploy the back ends to the overcloud, create volume-type for the backend and test if you can successfully create and attach volumes of that type. 
 
 ## References
-* [Red Hat OpenStack Platform Overcloud Custom Block Storage Backend Guide](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/13/html/custom_block_storage_back_end_deployment_guide/index)
+* [Red Hat OpenStack Platform Overcloud Custom Block Storage Backend Guide](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.0/html/custom_block_storage_back_end_deployment_guide/index)
 
   
 
