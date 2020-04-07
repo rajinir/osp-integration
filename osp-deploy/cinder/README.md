@@ -1,5 +1,5 @@
 
-# Dell EMC Cinder Backend Deployment Guide for Red Hat OpenStack Platform
+# Dell EMC Cinder Backend Deployment Guide for Red Hat OpenStack Platform 16
 
 ## Overview
 
@@ -12,7 +12,7 @@ This document mainly covers the Dell EMC storage backends that are not yet fully
 * [Dell EMC SC Series Fibre Channel driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html)
 
 The following Dell EMC storage drivers that are fully integrated with director and can be deployed using tripleo heat templates 
-* [Dell EMC SC Series iSCSI driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html)
+* [Dell EMC SC Series iSCSI driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html). 
 * [Dell EMC Unity driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-unity-driver.html) - 
  For Unity please refer to  https://github.com/emc-openstack/osp-deploy
 * [Dell EMC VNX driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-vnx-driver.html) -  For VNX please refer to https://github.com/emc-openstack/osp-deploy
@@ -20,19 +20,19 @@ The following Dell EMC storage drivers that are fully integrated with director a
 
 
 ### Prerequisites
-- Red Hat OpenStack Platform (RHOSP) overcloud deployed through director.
-- Dell EMC Storage Backend configured as storage repositories.
-- Mapping of the configuration you want for the specific storage backend in /etc/cinder/cinder.conf
+- Red Hat OpenStack Platform (RHOSP) 16 overcloud deployed through director.
+- Dell EMC Storage Backend configured as storage repository.
+- Configuration settings and credentials
 
 ### Deployment Steps
 
-#### Prepare the mapping
-Map out the resulting /etc/cinder/cinder.conf file for the choosen backend storage configuration.
+#### Congiguration settings
+Configuration setttings and credentials for the choosen backend storage.
 
 #### Create the Environment File
-The environment file contains the settings for each back end you want to define. It also contains other settings relevant to the deployment of a custom back end. Having the environment file handy will help ensure that the back end settings persist through future Overcloud updates.  
+The environment file contains the settings for each back end you want to define. The environment file handy will help ensure that the back end settings persist through future Overcloud updates.  
 
-Create the environment file that will orchestrate the back end settings. Use the sample file provided below for each backend.  
+Create the environment file that will orchestrate the back end settings. Use the sample file provided below for your specific backend.  
 
 **1. Dell EMC XtremIO Block Storage driver**
 
@@ -167,7 +167,7 @@ parameter_defaults:
 ```    
 #### Deploy the configured backends
 
-When you have created the dellemc-backend-env.yaml file, deploy the backend configuration by running the openstack overcloud deploy command using the templates option. If you passed any extra environment files when you created the overcloud, pass them again here using the -e option. 
+When you have created the file dellemc-backend-env.yaml file with appropriate backends, deploy the backend configuration by running the openstack overcloud deploy command using the templates option. If you passed any extra environment files when you created the overcloud, pass them again here using the -e option. 
  
 ```bash
 (undercloud) $ openstack overcloud deploy --templates \
@@ -175,13 +175,15 @@ When you have created the dellemc-backend-env.yaml file, deploy the backend conf
 -e <other templates>
 ```
 
+#### MultiBackend Deployment
+You can deploy multiple backends simulatenously using the -e templates options as well. 
+
 #### Verify the configured changes
 
-When the director completes the overcloud deployment, check the cinder.conf on the controller nodes and verify the settings mapped.
+When the director completes the overcloud deployment, check that the cinder services are up and running. You can also verify that the cinder.conf has the correct settings. 
 
 #### Testing the configured Backend
-After you deploy the back ends to the overcloud, test if you can successfully create volumes on them.
-
+After you deploy the back ends to the overcloud, create volume-type for the backend and test if you can successfully create and attach volumes of that type. 
 
 ## References
 * [Red Hat OpenStack Platform Overcloud Custom Block Storage Backend Guide](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/13/html/custom_block_storage_back_end_deployment_guide/index)
