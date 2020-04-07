@@ -142,7 +142,7 @@ parameter_defaults:
             value: 'SRP_1'
     cinder_user_enabled_backends: ['tripleo_dellemc_powermax']
 ```
-**3. Dell EMC SC Series Fibre Channel driver**
+**3. Dell EMC SC Series Fibre Channel driver**  
 For full detailed instruction of options please refer to [SC Series Backend Configuration](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html#configuration-options)
 
 **FC Environment sample**
