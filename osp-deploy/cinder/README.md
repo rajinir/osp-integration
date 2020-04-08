@@ -42,9 +42,6 @@ For full detailed instruction of options please refer to [XtremIO Backend Config
 
 ```yaml
 parameter_defaults:
-  CinderEnableIscsiBackend:true
-
-parameter_defaults:
   ControllerExtraConfig:
     cinder::config::cinder_config:
         tripleo_dellemc_xtremio/volume_driver:
@@ -91,9 +88,6 @@ For full detailed instruction of options please refer to [PowerMax Backend Confi
 
 ```yaml
 parameter_defaults:
-  CinderEnableIscsiBackend:true
-
-parameter_defaults:
   ControllerExtraConfig:
     cinder::config::cinder_config:
         tripleo_dellemc_powermax/volume_driver:
@@ -118,9 +112,6 @@ parameter_defaults:
 **FC Environment sample**
 
 ```yaml
-parameter_defaults:
-  CinderEnableIscsiBackend:false
-
 parameter_defaults:
   ControllerExtraConfig:
     cinder::config::cinder_config:
