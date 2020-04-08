@@ -36,22 +36,21 @@ For full detailed instruction of options please refer to [XtremIO Backend Config
 **iSCSI Environment sample**
 
 ```yaml
+# A Heat environment file which can be used to enable a
+# Cinder Dell EMC XTREMIOIscsi backend, configured via puppet
+resource_registry:
+  OS::TripleO::Services::CinderBackendDellEMCXTREMIOIscsi: ../deployment/cinder/cinder-backend-dellemc-xtremio-iscsi-puppet.yaml
+
 parameter_defaults:
-  ControllerExtraConfig:
-    cinder::config::cinder_config:
-      tripleo_dellemc_xtremio/volume_driver:
-        value: cinder.volume.drivers.dell_emc.xtremio.XtremIOISCSIDriver
-      tripleo_dellemc_xtremio/volume_backend_name:
-        value: tripleo_dellemc_xtremio
-      tripleo_dellemc_xtremio/san_ip:
-        value: '10.10.10.10'
-      tripleo_dellemc_xtremio/san_login:
-        value: 'my_username'
-      tripleo_dellemc_xtremio/san_password:
-        value: 'my_password'
-      tripleo_dellemc_xtremio/xtremio_volumes_per_glance_cache:
-        value: 100  
-    cinder_user_enabled_backends: ['tripleo_dellemc_xtremio']
+  CinderEnableDellEMCXTREMIOIscsiBackend: true
+  CinderDellEMCXTREMIOIscsiBackendName: 'tripleo_dellemc_xtremio_iscsi'
+  CinderDellEMCXTREMIOIscsiSanIp: '10.10.10.10'
+  CinderDellEMCXTREMIOIscsiSanLogin: 'my_username'
+  CinderDellEMCXTREMIOIscsiSanPassword: 'my_password'
+  CinderDellEMCXTREMIOIscsiClusterName: 'Cluster-Name'
+  CinderDellEMCXTREMIOIscsiArrayBusyRetryCount: 5
+  CinderDellEMCXTREMIOIscsiArrayBusyRetryInterval: 5
+  CinderDellEMCXTREMIOIscsiVolumesPerGlanceCache: 100
 ```
 
 **FC Environment sample**
