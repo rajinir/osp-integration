@@ -4,8 +4,7 @@
 ## Overview
 
 This document describes how to deploy the Dell EMC Block Storage services in a Red Hat OpenStack Platform Overcloud.
-This assumes that the RHOSP is installed and managed by RHOSP Director toolset which is based primarily on the upstream TripleO project.  
-
+This assumes that the RHOSP installion is through RHOSP Director toolset which is based primarily on the upstream TripleO project.  
 This mainly covers the Dell EMC storage backends that are not yet fully integrated with Director through Tripleo like
 * [Dell EMC XtremIO Block Storage driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-xtremio-driver.html)
 * [Dell EMC PowerMax iSCSI and FC drivers](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-powermax-driver.html)
