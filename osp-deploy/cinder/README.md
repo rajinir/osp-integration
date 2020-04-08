@@ -164,6 +164,7 @@ When you have created the file dellemc-backend-env.yaml file with appropriate ba
 (undercloud) $ openstack overcloud deploy --templates \
 -e /home/stack/templates/overcloud_images.yaml \
 -e <other templates>
+.....
 -e /home/stack/templates/dellemc-backend-env.yaml  \
 ```
 
