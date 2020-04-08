@@ -39,18 +39,18 @@ For full detailed instruction of options please refer to [XtremIO Backend Config
 parameter_defaults:
   ControllerExtraConfig:
     cinder::config::cinder_config:
-        tripleo_dellemc_xtremio/volume_driver:
-            value: cinder.volume.drivers.dell_emc.xtremio.XtremIOISCSIDriver
-        tripleo_dellemc_xtremio/volume_backend_name:
-            value: tripleo_dellemc_xtremio
-        tripleo_dellemc_xtremio/san_ip:
-            value: '10.10.10.10'
-        tripleo_dellemc_xtremio/san_login:
-            value: 'my_username'
-        tripleo_dellemc_xtremio/san_password:
-            value: 'my_password'
-        tripleo_dellemc_xtremio/xtremio_volumes_per_glance_cache:
-            value: 100  
+      tripleo_dellemc_xtremio/volume_driver:
+        value: cinder.volume.drivers.dell_emc.xtremio.XtremIOISCSIDriver
+      tripleo_dellemc_xtremio/volume_backend_name:
+        value: tripleo_dellemc_xtremio
+      tripleo_dellemc_xtremio/san_ip:
+        value: '10.10.10.10'
+      tripleo_dellemc_xtremio/san_login:
+        value: 'my_username'
+      tripleo_dellemc_xtremio/san_password:
+        value: 'my_password'
+      tripleo_dellemc_xtremio/xtremio_volumes_per_glance_cache:
+        value: 100  
     cinder_user_enabled_backends: ['tripleo_dellemc_xtremio']
 ```
 
@@ -60,18 +60,18 @@ parameter_defaults:
 parameter_defaults:
   ControllerExtraConfig:
     cinder::config::cinder_config:
-        tripleo_dellemc_xtremio/volume_driver:
-            value: cinder.volume.drivers.dell_emc.xtremio.XtremIOFibreChannelDriver
-        tripleo_dellemc_xtremio/volume_backend_name:
-            value: tripleo_dellemc_xtremio
-        tripleo_dellemc_xtremio/san_ip:
-            value: '10.10.10.10'
-        tripleo_dellemc_xtremio/san_login:
-            value: 'my_username'
-        tripleo_dellemc_xtremio/san_password:
-            value: 'my_password'
-        tripleo_dellemc_xtremio/xtremio_volumes_per_glance_cache:
-            value: 100  
+      tripleo_dellemc_xtremio/volume_driver:
+        value: cinder.volume.drivers.dell_emc.xtremio.XtremIOFibreChannelDriver
+      tripleo_dellemc_xtremio/volume_backend_name:
+        value: tripleo_dellemc_xtremio
+      tripleo_dellemc_xtremio/san_ip:
+        value: '10.10.10.10'
+      tripleo_dellemc_xtremio/san_login:
+        value: 'my_username'
+      tripleo_dellemc_xtremio/san_password:
+        value: 'my_password'
+      tripleo_dellemc_xtremio/xtremio_volumes_per_glance_cache:
+        value: 100  
     cinder_user_enabled_backends: ['tripleo_dellemc_xtremio']
 ```
 
@@ -163,8 +163,8 @@ When you have created the file dellemc-backend-env.yaml file with appropriate ba
 ```bash
 (undercloud) $ openstack overcloud deploy --templates \
 -e /home/stack/templates/overcloud_images.yaml \
--e /home/stack/templates/dellemc-backend-env.yaml  \
 -e <other templates>
+-e /home/stack/templates/dellemc-backend-env.yaml  \
 ```
 
 ### MultiBackend Deployment
