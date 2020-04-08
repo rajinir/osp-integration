@@ -139,7 +139,6 @@ parameter_defaults:
 ```
 **3. SC Series iSCSI and FC drivers**  
 For full detailed instruction of options please refer to [SC Series Backend Configuration](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html#configuration-options)
-For full detailed instruction of options please refer to [XtremIO Backend Configuration](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-xtremio-driver.html#configuration-options).
 
 **iSCSI Environment sample**
 
@@ -211,6 +210,50 @@ When you have created the file dellemc-backend-env.yaml file with appropriate ba
 .....
 -e /home/stack/templates/dellemc-backend-env.yaml  \
 ```
+
+### Multiple Backend Deployment
+Multiple backends can be deplpoyed at once (same kind of different kinds), The following sample environment file defines two PowerMax back ends, tripleo_emc_powermax1 using iSCSI driver and tripleo_emc_powermax2 using the FC driver:
+
+```yaml
+parameter_defaults:
+  ControllerExtraConfig:
+    cinder::config::cinder_config:
+        tripleo_dellemc_powermax1/volume_driver:
+            value: cinder.volume.drivers.dell_emc.vmax.iscsi.VMAXISCSIDriver
+        tripleo_dellemc_powermax1/volume_backend_name:
+            value: tripleo_dellemc_powermax1
+        tripleo_dellemc_powermax1/san_ip:
+            value: '10.10.10.10'
+        tripleo_dellemc_powermax1/san_login:
+            value: 'my_username'
+        tripleo_dellemc_powermax1/san_password:
+            value: 'my_password'
+        tripleo_dellemc_powermax1/vmax_port_groups:
+            value: '[OS-ISCSI-PG]'
+        tripleo_dellemc_powermax1/vmax_array:
+            value: '000123456789'
+        tripleo_dellemc_powermax1/vmax_srp:
+            value: 'SRP_1'
+        tripleo_dellemc_powermax2/volume_driver:
+            value: cinder.volume.drivers.dell_emc.vmax.fc.VMAXFCIDriver
+        tripleo_dellemc_powermax2/volume_backend_name:
+            value: tripleo_dellemc_powermax2
+        tripleo_dellemc_powermax2/san_ip:
+            value: '10.10.10.10'
+        tripleo_dellemc_powermax2/san_login:
+            value: 'my_username'
+        tripleo_dellemc_powermax22/san_password:
+            value: 'my_password'
+        tripleo_dellemc_powermax2/vmax_port_groups:
+            value: '[OS-FC-PG]'
+        tripleo_dellemc_powermax2/vmax_array:
+            value: '000123456789'
+        tripleo_dellemc_powermax2/vmax_srp:
+            value: 'SRP_1'
+    cinder_user_enabled_backends: ['tripleo_dellemc_powermax1', 'tripleo_dellemc_powermax2']
+```
+Do not use cinder_user_enabled_backends to list back ends that you can enable natively with director. 
+For more information see the Red Hat [Custom Block Storage Back End Deployment Guide](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.0/html/custom_block_storage_back_end_deployment_guide/envfile)
 
 ### Verify the configured changes
 
