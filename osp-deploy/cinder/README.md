@@ -24,11 +24,8 @@ The following Dell EMC storage drivers that are fully integrated with director a
 
 ## Deployment Steps
 
-### Configuration settings
-Configuration setttings and credentials for the choosen backend storage.
-
 ### Prepare the Environment File
-The environment file contains the settings for each back end you want to define. The environment file handy will help ensure that the back end settings persist through future Overcloud updates.  
+The environment file contains the settings for each back end you want to define. Using the environment file will ensure that the back end settings persist through future Overcloud updates.  
 
 Create the environment file that will orchestrate the back end settings. Use the sample file provided below for your specific backend.  
 
