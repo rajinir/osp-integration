@@ -169,7 +169,7 @@ When you have created the file dellemc-backend-env.yaml file with appropriate ba
 
 ### Verify the configured changes
 
-When the director completes the overcloud deployment, check that the "openstack volume service list" and verify that the services are up and running. You can also verify that the cinder.conf in the cinder container and it should reflect changes made above.
+When the director completes the overcloud deployment, check that the volume services are up using the openstack cli command "openstack volume service list". You can also verify that the cinder.conf in the cinder container and it should reflect changes made above.
 
 ### Testing the configured Backend
 After you deploy the back ends to the overcloud, create volume-type for the backend and test if you can successfully create and attach volumes of that type. 
