@@ -59,10 +59,7 @@ parameter_defaults:
   CinderDellEMCXTREMIOIscsiSanIp: '10.10.10.10'
   CinderDellEMCXTREMIOIscsiSanLogin: 'my_username'
   CinderDellEMCXTREMIOIscsiSanPassword: 'my_password'
-  CinderDellEMCXTREMIOIscsiClusterName: 'Cluster-Name'
-  CinderDellEMCXTREMIOIscsiArrayBusyRetryCount: 5
-  CinderDellEMCXTREMIOIscsiArrayBusyRetryInterval: 5
-  CinderDellEMCXTREMIOIscsiVolumesPerGlanceCache: 100
+  CinderDellEMCXTREMIOIscsiClusterName: 'Cluster-Name'  
 ```
 
 **FC Environment sample**
@@ -163,13 +160,11 @@ resource_registry:
 parameter_defaults:
   CinderEnableDellScBackend: true
   CinderDellScBackendName: 'tripleo_dellsc'
-  CinderDellScSanIp: ''
-  CinderDellScSanLogin: 'Admin'
-  CinderDellScSanPassword: '10.10.10.11'
+  CinderDellScSanIp: '10.10.10.10'
+  CinderDellScSanLogin: 'my_username'
+  CinderDellScSanPassword: 'my_password'
   CinderDellScSsn: 64702
   CinderDellScIscsiIpAddress: '10.10.10.11'
-  CinderDellScIscsiPort: 3260
-  CinderDellScApiPort: 3033
   CinderDellScServerFolder: 'dellsc_server'
   CinderDellScVolumeFolder: 'dellsc_volume'
   CinderDellScExcludedDomainIps: []
@@ -193,9 +188,7 @@ parameter_defaults:
           value: 'my_password'
         tripleo_dellemc_dellsc/dell_sc_ssn :
           value: '64702'
-        tripleo_dellemc_dellsc/dell_sc_api_port:
-          value: '3033'
-        tripleo_dellemc_dellsc/dell_sc_server_folder:
+         tripleo_dellemc_dellsc/dell_sc_server_folder:
           value: 'cindersrv'
         tripleo_dellemc_dellsc/dell_sc_volume_folder :
           value: 'cindervol'
