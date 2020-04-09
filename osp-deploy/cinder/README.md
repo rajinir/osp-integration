@@ -30,6 +30,10 @@ The environment file contains the settings for each back end you want to define.
 Create the environment file that will orchestrate the back end settings. Use the sample file provided below for your specific backend.  
 
 Note: **LVM driver** is enabled by default in TripleO, you want to set the **CinderEnableIscsiBackend** to false in one of you environment file to turn it off.
+```yaml
+parameter_defaults:
+  CinderEnableIscsiBackend: false
+```
 
 **1. XtremIO iSCSI and FC drivers**
 
@@ -247,13 +251,15 @@ parameter_defaults:
             value: 'SRP_1'
     cinder_user_enabled_backends: ['tripleo_dellemc_powermax1', 'tripleo_dellemc_powermax2']
 ```
-Do not use cinder_user_enabled_backends to list back ends that you can enable natively with director. 
+Do not use **cinder_user_enabled_backends** to list back ends that you can enable natively with director. 
 For more information see the Red Hat [Custom Block Storage Back End Deployment Guide](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.0/html/custom_block_storage_back_end_deployment_guide/envfile)
 
 ### Verify the configured changes
 
-When the director completes the overcloud deployment, check that the volume services are up using the openstack cli command "openstack volume service list". You can also verify that the cinder.conf in the cinder container and it should reflect changes made above.
-
+When the director completes the overcloud deployment, check that the volume services are up using the openstack cli command. You can also verify that the cinder.conf in the cinder container and it should reflect changes made above.
+``` bash
+$openstack volume service list
+```
 ### Testing the configured Backend
 After you deploy the back ends to the overcloud, create volume-type for the backend and test if you can successfully create and attach volumes of that type. 
 
