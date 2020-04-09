@@ -29,7 +29,7 @@ The environment file is a OSP director environment file. The environment file co
 
 Create the environment file that will orchestrate the back end settings. Use the sample file provided below for your specific backend.  
 
-Note: **LVM driver** is enabled by default in TripleO, you want to set the **CinderEnableIscsiBackend** to false in one of you environment file to turn it off.
+Note: **LVM driver** is enabled by default in TripleO, you want to set the ```CinderEnableIscsiBackend``` to false in one of you environment file to turn it off.
 ```yaml
 parameter_defaults:
   CinderEnableIscsiBackend: false
