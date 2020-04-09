@@ -99,22 +99,22 @@ For full detailed instruction of options please refer to [PowerMax Backend Confi
 parameter_defaults:
   ControllerExtraConfig:
     cinder::config::cinder_config:
-        tripleo_dellemc_powermax/volume_driver:
-          value: cinder.volume.drivers.dell_emc.vmax.iscsi.VMAXISCSIDriver
-        tripleo_dellemc_powermax/volume_backend_name:
-          value: tripleo_dellemc_powermax
-        tripleo_dellemc_powermax/san_ip:
-          value: '10.10.10.10'
-        tripleo_dellemc_powermax/san_login:
-          value: 'my_username'
-        tripleo_dellemc_powermax/san_password:
-          value: 'my_password'
-        tripleo_dellemc_powermax/vmax_port_groups:
-          value: '[OS-ISCSI-PG]'
-        tripleo_dellemc_powermax/vmax_array:
-          value: '000123456789'
-        tripleo_dellemc_powermax/vmax_srp:
-          value: 'SRP_1'
+      tripleo_dellemc_powermax/volume_driver:
+        value: cinder.volume.drivers.dell_emc.vmax.iscsi.VMAXISCSIDriver
+      tripleo_dellemc_powermax/volume_backend_name:
+        value: tripleo_dellemc_powermax
+      tripleo_dellemc_powermax/san_ip:
+        value: '10.10.10.10'
+      tripleo_dellemc_powermax/san_login:
+        value: 'my_username'
+      tripleo_dellemc_powermax/san_password:
+        value: 'my_password'
+      tripleo_dellemc_powermax/vmax_port_groups:
+        value: '[OS-ISCSI-PG]'
+      tripleo_dellemc_powermax/vmax_array:
+        value: '000123456789'
+      tripleo_dellemc_powermax/vmax_srp:
+        value: 'SRP_1'
     cinder_user_enabled_backends: ['tripleo_dellemc_powermax']
 ```
 
@@ -124,22 +124,22 @@ parameter_defaults:
 parameter_defaults:
   ControllerExtraConfig:
     cinder::config::cinder_config:
-        tripleo_dellemc_powermax/volume_driver:
-          value: cinder.volume.drivers.dell_emc.vmax.fc.VMAXFCIDriver
-        tripleo_dellemc_powermax/volume_backend_name:
-          value: tripleo_dellemc_powermax
-        tripleo_dellemc_powermax/san_ip:
-          value: '10.10.10.10'
-        tripleo_dellemc_powermax/san_login:
-          value: 'my_username'
-        tripleo_dellemc_powermax/san_password:
-          value: 'my_password'
-        tripleo_dellemc_powermax/vmax_port_groups:
-          value: '[OS-FC-PG]'
-        tripleo_dellemc_powermax/vmax_array:
-          value: '000123456789'
-        tripleo_dellemc_powermax/vmax_srp:
-          value: 'SRP_1'
+      tripleo_dellemc_powermax/volume_driver:
+        value: cinder.volume.drivers.dell_emc.vmax.fc.VMAXFCIDriver
+      tripleo_dellemc_powermax/volume_backend_name:
+        value: tripleo_dellemc_powermax
+      tripleo_dellemc_powermax/san_ip:
+        value: '10.10.10.10'
+      tripleo_dellemc_powermax/san_login:
+        value: 'my_username'
+      tripleo_dellemc_powermax/san_password:
+        value: 'my_password'
+      tripleo_dellemc_powermax/vmax_port_groups:
+        value: '[OS-FC-PG]'
+      tripleo_dellemc_powermax/vmax_array:
+        value: '000123456789'
+      tripleo_dellemc_powermax/vmax_srp:
+        value: 'SRP_1'
     cinder_user_enabled_backends: ['tripleo_dellemc_powermax']
 ```
 **3. SC Series iSCSI and FC drivers**  
@@ -182,22 +182,22 @@ parameter_defaults:
 parameter_defaults:
   ControllerExtraConfig:
     cinder::config::cinder_config:
-        tripleo_dellemc_dellsc/volume_driver:
-          value: cinder.volume.drivers.dell_emc.sc.storagecenter_fc.SCFCDriver
-        tripleo_dellemc_dellsc/volume_backend_name:
-          value: tripleo_dellemc_dellsc
-        tripleo_dellemc_dellsc/san_ip:
-          value: '10.10.10.1'
-        tripleo_dellemc_dellsc/san_login:
-          value: 'Admin'
-        tripleo_dellemc_dellsc/san_password:
-          value: 'my_password'
-        tripleo_dellemc_dellsc/dell_sc_ssn :
-          value: '64702'
-         tripleo_dellemc_dellsc/dell_sc_server_folder:
-          value: 'cindersrv'
-        tripleo_dellemc_dellsc/dell_sc_volume_folder :
-          value: 'cindervol'
+      tripleo_dellemc_dellsc/volume_driver:
+        value: cinder.volume.drivers.dell_emc.sc.storagecenter_fc.SCFCDriver
+      tripleo_dellemc_dellsc/volume_backend_name:
+        value: tripleo_dellemc_dellsc
+      tripleo_dellemc_dellsc/san_ip:
+        value: '10.10.10.1'
+      tripleo_dellemc_dellsc/san_login:
+        value: 'Admin'
+      tripleo_dellemc_dellsc/san_password:
+        value: 'my_password'
+      tripleo_dellemc_dellsc/dell_sc_ssn :
+        value: '64702'
+      tripleo_dellemc_dellsc/dell_sc_server_folder:
+        value: 'cindersrv'
+      tripleo_dellemc_dellsc/dell_sc_volume_folder :
+        value: 'cindervol'
     cinder_user_enabled_backends: ['tripleo_dellemc_dellsc']
 ```    
 ### Deploy the configured backends
@@ -219,38 +219,38 @@ Multiple backends can be deplpoyed at once (same kind of different kinds), The f
 parameter_defaults:
   ControllerExtraConfig:
     cinder::config::cinder_config:
-        tripleo_dellemc_powermax1/volume_driver:
-            value: cinder.volume.drivers.dell_emc.vmax.iscsi.VMAXISCSIDriver
-        tripleo_dellemc_powermax1/volume_backend_name:
-            value: tripleo_dellemc_powermax1
-        tripleo_dellemc_powermax1/san_ip:
-            value: '10.10.10.10'
-        tripleo_dellemc_powermax1/san_login:
-            value: 'my_username'
-        tripleo_dellemc_powermax1/san_password:
-            value: 'my_password'
-        tripleo_dellemc_powermax1/vmax_port_groups:
-            value: '[OS-ISCSI-PG]'
-        tripleo_dellemc_powermax1/vmax_array:
-            value: '000123456789'
-        tripleo_dellemc_powermax1/vmax_srp:
-            value: 'SRP_1'
-        tripleo_dellemc_powermax2/volume_driver:
-            value: cinder.volume.drivers.dell_emc.vmax.fc.VMAXFCIDriver
-        tripleo_dellemc_powermax2/volume_backend_name:
-            value: tripleo_dellemc_powermax2
-        tripleo_dellemc_powermax2/san_ip:
-            value: '10.10.10.10'
-        tripleo_dellemc_powermax2/san_login:
-            value: 'my_username'
-        tripleo_dellemc_powermax22/san_password:
-            value: 'my_password'
-        tripleo_dellemc_powermax2/vmax_port_groups:
-            value: '[OS-FC-PG]'
-        tripleo_dellemc_powermax2/vmax_array:
-            value: '000123456789'
-        tripleo_dellemc_powermax2/vmax_srp:
-            value: 'SRP_1'
+      tripleo_dellemc_powermax1/volume_driver:
+        value: cinder.volume.drivers.dell_emc.vmax.iscsi.VMAXISCSIDriver
+      tripleo_dellemc_powermax1/volume_backend_name:
+        value: tripleo_dellemc_powermax1
+      tripleo_dellemc_powermax1/san_ip:
+        value: '10.10.10.10'
+      tripleo_dellemc_powermax1/san_login:
+        value: 'my_username'
+      tripleo_dellemc_powermax1/san_password:
+        value: 'my_password'
+      tripleo_dellemc_powermax1/vmax_port_groups:
+        value: '[OS-ISCSI-PG]'
+      tripleo_dellemc_powermax1/vmax_array:
+        value: '000123456789'
+      tripleo_dellemc_powermax1/vmax_srp:
+        value: 'SRP_1'
+      tripleo_dellemc_powermax2/volume_driver:
+        value: cinder.volume.drivers.dell_emc.vmax.fc.VMAXFCIDriver
+      tripleo_dellemc_powermax2/volume_backend_name:
+        value: tripleo_dellemc_powermax2
+      tripleo_dellemc_powermax2/san_ip:
+        value: '10.10.10.10'
+      tripleo_dellemc_powermax2/san_login:
+        value: 'my_username'
+      tripleo_dellemc_powermax22/san_password:
+        value: 'my_password'
+      tripleo_dellemc_powermax2/vmax_port_groups:
+        value: '[OS-FC-PG]'
+      tripleo_dellemc_powermax2/vmax_array:
+        value: '000123456789'
+      tripleo_dellemc_powermax2/vmax_srp:
+        value: 'SRP_1'
     cinder_user_enabled_backends: ['tripleo_dellemc_powermax1', 'tripleo_dellemc_powermax2']
 ```
 Do not use **cinder_user_enabled_backends** to list back ends that you can enable natively with director. 
