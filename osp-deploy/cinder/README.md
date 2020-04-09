@@ -51,6 +51,8 @@ $ cp /usr/share/openstack-tripleo-heat-templates/environments/cinder-dellemc-xtr
 ```
 Afterwards, open the copy (~/templates/cinder-dellemc-xtremio-iscsi-config.yaml) and edit it as you see fit. The following shows a sample content of the file.
 
+Note that the ```resource_registry``` entry in the heat environment file must be an absolute path when you make a copy.
+
 ```yaml
 # A Heat environment file which can be used to enable a
 # Cinder Dell EMC XTREMIO iSCSI backend, configured via puppet
