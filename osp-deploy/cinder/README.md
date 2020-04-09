@@ -37,7 +37,7 @@ parameter_defaults:
 
 **1. XtremIO iSCSI and FC drivers**
 
-For full detailed instruction of options please refer to [XtremIO Backend Configuration](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-xtremio-driver.html#configuration-options).
+For full detailed instruction of all options please refer to [XtremIO Backend Configuration](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-xtremio-driver.html#configuration-options).
 
 **iSCSI Environment sample**
 
@@ -49,7 +49,7 @@ Copy this file to a local path where you can edit and invoke it later. For examp
 ```bash
 $ cp /usr/share/openstack-tripleo-heat-templates/environments/cinder-dellemc-xtremio-iscsi-config.yaml ~/templates/
 ```
-Afterwards, open the copy (~/templates/cinder-dellemc-xtremio-iscsi-config.yaml) and edit it as you see fit. The following shows a sample content of the file.
+Afterwards, open the copy (~/templates/cinder-dellemc-xtremio-iscsi-config.yaml) and edit it as you see fit. The following shows a sample content of the file. The files will list optional params that the user can choose to override if they don't like the default value.
 
 Note that the ```resource_registry``` entry in the heat environment file must be an absolute path when you make a copy.
 
@@ -155,7 +155,7 @@ Copy this file to a local path where you can edit and invoke it later. For examp
 ```bash
 $ cp /usr/share/openstack-tripleo-heat-templates/environments/cinder-dellsc-config.yaml ~/templates/
 ```
-Afterwards, open the copy (~/templates/cinder-dellsc-config.yaml) and edit it as you see fit. The following shows a sample content of the file.
+Afterwards, open the copy (~/templates/cinder-dellsc-config.yaml) and edit it as you see fit. The following shows a sample content of the file. The files will list optional params that the user can choose to override if they don't like the default value.
 
 ```yaml
 # A Heat environment file which can be used to enable a
