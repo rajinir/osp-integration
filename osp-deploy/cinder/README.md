@@ -25,7 +25,7 @@ The following Dell EMC storage drivers that are fully integrated with director a
 ## Deployment Steps
 
 ### Prepare the Environment File
-The environment file contains the settings for each back end you want to define. Using the environment file will ensure that the back end settings persist through future Overcloud updates.  
+The environment file is a OSP director environment file. The environment file contains the settings for each back end you want to define. Using the environment file will ensure that the back end settings persist through future Overcloud updates and upgrades.  
 
 Create the environment file that will orchestrate the back end settings. Use the sample file provided below for your specific backend.  
 
@@ -261,7 +261,7 @@ When the director completes the overcloud deployment, check that the volume serv
 $openstack volume service list
 ```
 ### Testing the configured Backend
-After you deploy the back ends to the overcloud, create volume-type for the backend and test if you can successfully create and attach volumes of that type. 
+After you deploy the back ends to the overcloud, create a volume-type per backend and test if you can successfully create and attach volumes of that type.
 
 ## References
 * [Red Hat OpenStack Platform Overcloud Custom Block Storage Backend Guide](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.0/html/custom_block_storage_back_end_deployment_guide/index)
