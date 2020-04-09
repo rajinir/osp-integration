@@ -4,8 +4,8 @@
 ## Overview
 
 This document describes how to deploy the Dell EMC Block Storage services in a Red Hat OpenStack Platform Overcloud.
-This assumes that the RHOSP installion is through RHOSP Director toolset which is based primarily on the upstream TripleO project.  
-This mainly covers the Dell EMC storage backends that are not yet fully integrated with Director through Tripleo like
+This assumes that the RHOSP installion is through RHOSP director toolset which is based primarily on the upstream TripleO project.  
+This mainly covers the Dell EMC storage backends that are not yet fully integrated with director through Tripleo like
 * [XtremIO Fibre Channel driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-xtremio-driver.html)
 * [PowerMax iSCSI and FC drivers](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-powermax-driver.html)
 * [SC Series Fibre Channel driver](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-storagecenter-driver.html)
@@ -35,7 +35,7 @@ For full detailed instruction of options please refer to [XtremIO Backend Config
 
 **iSCSI Environment sample**
 
-With a Director deployment, XtremIO iSCSI backend can be deployed using the integrated heat environment file. This file is located in the following path of the Undercloud node:
+With a director deployment, XtremIO iSCSI backend can be deployed using the integrated heat environment file. This file is located in the following path of the Undercloud node:
 /usr/share/openstack-tripleo-heat-templates/environments/cinder-dellemc-xtremio-iscsi-config.yaml
 
 Copy this file to a local path where you can edit and invoke it later. For example, to copy it to ~/templates/:
@@ -142,7 +142,7 @@ For full detailed instruction of options please refer to [SC Series Backend Conf
 
 **iSCSI Environment sample**
 
-With a Director deployment, Dell SC Series backend can be deployed using the integrated heat environment file. This file is located in the following path of the Undercloud node:
+With a director deployment, Dell SC Series backend can be deployed using the integrated heat environment file. This file is located in the following path of the Undercloud node:
 /usr/share/openstack-tripleo-heat-templates/environments/cinder-dellsc-config.yaml
 
 Copy this file to a local path where you can edit and invoke it later. For example, to copy it to ~/templates/:
