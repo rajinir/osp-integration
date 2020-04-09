@@ -29,6 +29,8 @@ The environment file contains the settings for each back end you want to define.
 
 Create the environment file that will orchestrate the back end settings. Use the sample file provided below for your specific backend.  
 
+Note: **LVM driver** is enabled by default in TripleO, you want to set the **CinderEnableIscsiBackend** to false in one of you environment file to turn it off.
+
 **1. XtremIO iSCSI and FC drivers**
 
 For full detailed instruction of options please refer to [XtremIO Backend Configuration](https://docs.openstack.org/cinder/latest/configuration/block-storage/drivers/dell-emc-xtremio-driver.html#configuration-options).
@@ -95,21 +97,21 @@ parameter_defaults:
   ControllerExtraConfig:
     cinder::config::cinder_config:
         tripleo_dellemc_powermax/volume_driver:
-            value: cinder.volume.drivers.dell_emc.vmax.iscsi.VMAXISCSIDriver
+          value: cinder.volume.drivers.dell_emc.vmax.iscsi.VMAXISCSIDriver
         tripleo_dellemc_powermax/volume_backend_name:
-            value: tripleo_dellemc_powermax
+          value: tripleo_dellemc_powermax
         tripleo_dellemc_powermax/san_ip:
-            value: '10.10.10.10'
+          value: '10.10.10.10'
         tripleo_dellemc_powermax/san_login:
-            value: 'my_username'
+          value: 'my_username'
         tripleo_dellemc_powermax/san_password:
-            value: 'my_password'
+          value: 'my_password'
         tripleo_dellemc_powermax/vmax_port_groups:
-            value: '[OS-ISCSI-PG]'
+          value: '[OS-ISCSI-PG]'
         tripleo_dellemc_powermax/vmax_array:
-            value: '000123456789'
+          value: '000123456789'
         tripleo_dellemc_powermax/vmax_srp:
-            value: 'SRP_1'
+          value: 'SRP_1'
     cinder_user_enabled_backends: ['tripleo_dellemc_powermax']
 ```
 
@@ -120,21 +122,21 @@ parameter_defaults:
   ControllerExtraConfig:
     cinder::config::cinder_config:
         tripleo_dellemc_powermax/volume_driver:
-            value: cinder.volume.drivers.dell_emc.vmax.fc.VMAXFCIDriver
+          value: cinder.volume.drivers.dell_emc.vmax.fc.VMAXFCIDriver
         tripleo_dellemc_powermax/volume_backend_name:
-            value: tripleo_dellemc_powermax
+          value: tripleo_dellemc_powermax
         tripleo_dellemc_powermax/san_ip:
-            value: '10.10.10.10'
+          value: '10.10.10.10'
         tripleo_dellemc_powermax/san_login:
-            value: 'my_username'
+          value: 'my_username'
         tripleo_dellemc_powermax/san_password:
-            value: 'my_password'
+          value: 'my_password'
         tripleo_dellemc_powermax/vmax_port_groups:
-            value: '[OS-FC-PG]'
+          value: '[OS-FC-PG]'
         tripleo_dellemc_powermax/vmax_array:
-            value: '000123456789'
+          value: '000123456789'
         tripleo_dellemc_powermax/vmax_srp:
-            value: 'SRP_1'
+          value: 'SRP_1'
     cinder_user_enabled_backends: ['tripleo_dellemc_powermax']
 ```
 **3. SC Series iSCSI and FC drivers**  
@@ -180,23 +182,23 @@ parameter_defaults:
   ControllerExtraConfig:
     cinder::config::cinder_config:
         tripleo_dellemc_dellsc/volume_driver:
-            value: cinder.volume.drivers.dell_emc.sc.storagecenter_fc.SCFCDriver
+          value: cinder.volume.drivers.dell_emc.sc.storagecenter_fc.SCFCDriver
         tripleo_dellemc_dellsc/volume_backend_name:
-            value: tripleo_dellemc_dellsc
+          value: tripleo_dellemc_dellsc
         tripleo_dellemc_dellsc/san_ip:
-            value: '10.10.10.1'
+          value: '10.10.10.1'
         tripleo_dellemc_dellsc/san_login:
-            value: 'Admin'
+          value: 'Admin'
         tripleo_dellemc_dellsc/san_password:
-            value: 'my_password'
+          value: 'my_password'
         tripleo_dellemc_dellsc/dell_sc_ssn :
-            value: '64702'
+          value: '64702'
         tripleo_dellemc_dellsc/dell_sc_api_port:
-            value: '3033'
+          value: '3033'
         tripleo_dellemc_dellsc/dell_sc_server_folder:
-            value: 'cindersrv'
+          value: 'cindersrv'
         tripleo_dellemc_dellsc/dell_sc_volume_folder :
-            value: 'cindervol'
+          value: 'cindervol'
     cinder_user_enabled_backends: ['tripleo_dellemc_dellsc']
 ```    
 ### Deploy the configured backends
